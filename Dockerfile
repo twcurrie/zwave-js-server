@@ -1,12 +1,12 @@
-FROM arm64v8/node:slim
+FROM node
 
 WORKDIR /usr/src/server
 
-COPY package*.json /
+COPY package*.json /usr/src/server/
 
-RUN sudo npm install -g 
-RUN sudo npm install -g @zwave-js/server
+RUN npm install -g typescript
+RUN npm install -g @zwave-js/server
 
 EXPOSE 3000
 
-ENTRYPOINT ["zwave-server] 
+ENTRYPOINT ["zwave-server"] 
